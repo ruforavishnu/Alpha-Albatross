@@ -1,0 +1,21 @@
+Commit file details
+
+Changes in commit#2
+********************
+
+Modified on: june 8, 2021
+Changes made: 
+
+1. Created form form_AddTask in html view
+2. On form submit, the control passes to form_validate.php
+3. form_validate.php checks if $_POST['txt_TaskDescription'] has been set
+4. If that is true, then the control proceeds to add a insert query to the database
+5. Insert query succeeds. The input value , timestamp and related values are entered into the table tbl_task which is part of db_alpha-albatross
+
+Time take: 83 mins
+
+
+
+
+
+

@@ -26,6 +26,32 @@
 	?>
 </p>
 
+<hr>
+<h3>Testing section 2</h3>
+<p>
+<?php
+
+require('initDatabase.php');
+
+//initializeDatabase();
+
+date_default_timezone_set("Asia/Calcutta");
+echo date('Y-m-d H:i:s');
+
+?>
+<br>
+
+<form action="form_validate.php" method="POST" id="form_AddTask">
+
+	<input type="text" name="txt_TaskDescription">
+
+</form>
+
+
+<button type="submit" form="form_AddTask" value="Add Task" name="btn_AddTask">Add Task</button>
+
+</p>
+
 	
 </body>
 </html>

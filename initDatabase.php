@@ -1,9 +1,12 @@
-//initDatabase
 
-// php query to create table
 
 
 <?php
+
+
+//initDatabase
+
+// php query to create table
 
 function initializeDatabase()
 {
@@ -11,7 +14,7 @@ function initializeDatabase()
 	$servername = "localhost";
 	$username = "root";
 	$password = "root";
-	$database_name = "db_alpha-albatross"
+	$database_name = "db_alpha-albatross";
 
 	$connection = new mysqli($servername, $username, $password, $database_name);
 
@@ -46,6 +49,37 @@ function initializeDatabase()
 	{
 		echo "Error in creating MySQL Table tbl_Task. Reason:". $connection->error;	
 	}
+
+
+}
+
+function insertIntoDb()
+{
+	$servername = "localhost";
+	$username = "root";
+	$password = "root";
+	$database_name = "db_alpha-albatross";
+
+	$connection = new mysqli($servername, $username, $password, $database_name);
+
+	if($connection->connect_error)
+	{
+		die("Connection Failed".$connection->connect_error);
+
+	}
+	$taskDescription = "";
+	$taskCreatedTimeStamp = ""
+	$taskStatus = "";
+
+	$insert_query_string = "INSERT INTO tbl_task VALUES("
+															.$taskDescription."\","
+															.$taskCreatedTimeStamp.",\""
+															.$taskStatus."\")";
+
+
+	echo "<br> DebugText: $insert_query_string:".$insert_query_string;
+
+																
 
 
 }

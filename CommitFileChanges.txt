@@ -1,6 +1,8 @@
 Commit file details
 
-Changes in commit#2
+Total time taken in this project = 60+83+70 = 213 mins or 3 hours 33 mins
+
+Changes in commit#3
 ********************
 
 Modified on: june 8, 2021
@@ -12,8 +14,22 @@ Changes made:
 4. If that is true, then the control proceeds to add a insert query to the database
 5. Insert query succeeds. The input value , timestamp and related values are entered into the table tbl_task which is part of db_alpha-albatross
 
-Time take: 83 mins
+Time taken: 83 mins
 
+
+Changes in commit#4
+********************
+
+Modified on: june 8, 2021
+Changes made: 
+
+1. Added bootstrap 4 styling
+2. Select query done. 
+3. Dashboard shows all tasks on page load
+4. Add task button adds the added task to the db and once 5 seconds is over, it refreshes the page and the on page load after refresh the just now added task is also presented in the table element.
+
+
+Time taken: 70 mins
 
 
 

@@ -17,6 +17,12 @@ if(isset($_POST['txt_TaskDescription']))
 	$taskDescription = $_POST['txt_TaskDescription'];
 	$taskStatus = "Not Begun";
 	$myTask->addTask($taskDescription, $taskStatus);
+
+	echo "<br><br> DebugText: Redirecting to dashboard in 5 seconds...";
+
+
+	header( "refresh:5;url=dashboard.php" );
+
 	
 }
 else

@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -84,18 +84,24 @@
                 <thead>
                 <tr>
                 <th>ID</th> <th>Task</th> <th>Created time</th> <th>Status</th>
+                <th>Update</th><th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 
                 <?php
 
+
+
                 while($row = $query_result->fetch_assoc() )
                   {
+                    
                   ?>
                     <tr>
                     <td>
-                    <?php echo $row['id']; ?>
+                    <?php echo $row['id'];
+                    $btn_IDString = "btn_ID". $row['id'];
+                     ?>
                     </td>
                     <td>
                     <?php echo $row['taskDescription']; ?>
@@ -105,6 +111,15 @@
                     </td>
                     <td>
                     <?php echo $row['taskStatus']; ?>
+                    </td>
+                    <td>
+                      <a href="editTask.php?btnID=<?php echo $btn_IDString; ?>" class="btn">
+                        <i class='fas fa-edit' style='font-size:24px;color:#000000;'></i>
+                      </a>
+
+                    </td>
+                    <td>
+                      <button class="btn btn-danger"> <i class='fas fa-trash' style='font-size:24px'></i></button>
                     </td>
                     </tr>
                     <?php

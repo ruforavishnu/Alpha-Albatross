@@ -1,6 +1,6 @@
 Commit file details
 
-Total time taken in this project = 60+83+70+33 = 246 mins or 4 hours 06 mins
+Total time taken in this project = 60+83+70+33+72 = 318 mins or 5 hours 18 mins
 
 Changes in commit#3
 ********************
@@ -36,14 +36,25 @@ Changes in commit#5
 ********************
 
 Time taken: 33 mins
+Modified on: june 9, 2021
 
-Modified on: june 8, 2021
 Changes made: 
 1. Added css styling to the form
 2. Added a select option in the form for the $taskStatus element
 3. Wrote code for $taskStatus functionality
 4. Dashboard has functionality of 'C' and 'R' in CRUD. Next need to write update and delete element code
 
+
+Changes in commit#6
+********************
+
+Time taken: 72 mins
+Modified on: june 9, 2021
+
+Changes made:
+1. Added fontawesome icon for edit and delete to each tasks.
+2. Update functionality code written. the corresponding task is calculated from the edit button and the user is taken to a new form where the task can be edited/updated.
+3. So now 'C', 'R' and 'U' functionality of CRUD are completed.
 
 
 

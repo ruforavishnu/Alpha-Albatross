@@ -22,13 +22,31 @@
           require('initDatabase.php');
           ?>
           <br>
-          <form action="form_validate.php" method="POST" id="form_AddTask">
-            <div class="form-group">
-              <input type="text" name="txt_TaskDescription" class="form-control">    
-            </div>  
+          <form action="form_validate.php" method="POST" id="form_AddTask" style="margin-bottom:20px;">
+            <div class="row">
+              <div class="col">
+                <label for="addTaskForm">Add Task</label>
+                <input type="text" name="txt_TaskDescription" class="form-control">      
+              </div>
+              <div class="col">
+                <label for="addTaskForm">Task Status</label>
+                <select class="form-control" name="select_TaskStatus">
+                  <option selected>Not-Begun</option>
+                  <option value="Started">Started</option>
+                  <option value="Little-done">Little-done</option>
+                  <option value="Half-done">Half-done</option>
+                  <option value="Almost-done">Almost-done</option>
+                  <option value="Completed">Completed</option>
+                </select>
+
+              </div>
+            </div>
+         
           </form>
 
           <button type="submit" form="form_AddTask" value="Add Task" name="btn_AddTask" class="btn btn-primary">Add Task</button>
+
+          
           
           </p>           
 

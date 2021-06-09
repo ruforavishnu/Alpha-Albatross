@@ -13,12 +13,15 @@ if(isset($_POST['txt_TaskDescription']))
 {
 	echo "<br> DebugText: post variable is set and so it contains a value";
 	echo "<br> DebugText: value of post variable txt_TaskDescription is:" . $_POST['txt_TaskDescription'];
+	echo "<br> DebugText: value of post variable select_TaskStatus is:" . $_POST['select_TaskStatus'];
+	echo "<br>";
+	
 
 	$taskDescription = $_POST['txt_TaskDescription'];
-	$taskStatus = "Not Begun";
+	$taskStatus = $_POST['select_TaskStatus'];
 	$myTask->addTask($taskDescription, $taskStatus);
 
-	echo "<br><br> DebugText: Redirecting to dashboard in 5 seconds...";
+	echo "<br><br><marquee> DebugText: Redirecting to dashboard in 5 seconds...</marquee>";
 
 
 	header( "refresh:5;url=dashboard.php" );

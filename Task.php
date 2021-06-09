@@ -55,7 +55,7 @@ class Task
 			//subtask 2
 			date_default_timezone_set("Asia/Calcutta");
 			$currentTimeStamp = date('Y-m-d H:i:s');
-			$taskStatus = "Not-Begun";
+			$taskStatus = $status;
 		/*	$insert_query = "INSERT INTO tbl_Task (\"". $description. "\"," .$currentTimeStamp.",\"" .$taskStatus. "\")";
 */
 

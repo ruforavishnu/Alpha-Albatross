@@ -1,6 +1,6 @@
 Commit file details
 
-Total time taken in this project = 60+83+70+33+72 = 318 mins or 5 hours 18 mins
+Total time taken in this project = 60+83+70+33+72+22 = 340 mins or 5 hours 40 mins
 
 Changes in commit#3
 ********************
@@ -55,6 +55,19 @@ Changes made:
 1. Added fontawesome icon for edit and delete to each tasks.
 2. Update functionality code written. the corresponding task is calculated from the edit button and the user is taken to a new form where the task can be edited/updated.
 3. So now 'C', 'R' and 'U' functionality of CRUD are completed.
+
+
+Changes in commit#7
+********************
+
+Time taken: 22 mins
+Modified on: june 10, 2021
+
+1. Added D functionality of CRUD
+2. Now the delete functionality of the web application also works.
+3. So total of all CRUD functionality's work.
+
+
 
 
 

@@ -118,8 +118,8 @@
                       </a>
 
                     </td>
-                    <td>
-                      <button class="btn btn-danger"> <i class='fas fa-trash' style='font-size:24px'></i></button>
+                    <td><a href="deleteTask.php?btnID=<?php echo $btn_IDString; ?>" class="btn">
+                      <i class='fas fa-trash' style='font-size:24px;color:#cc0000;'></i></a>
                     </td>
                     </tr>
                     <?php

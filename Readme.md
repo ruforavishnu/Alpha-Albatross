@@ -1,6 +1,8 @@
 Commit file details
 
-Total time taken in this project = 60+83+70+33+72+22 = 340 mins or 5 hours 40 mins
+Total time taken in this project = 60+83+70+33+72+22+74 = 414 mins or 6 hours 54 mins
+
+Changes are written in chronological order. So the latest commit details are at the bottom of the file.
 
 Changes in commit#3
 ********************
@@ -66,6 +68,16 @@ Modified on: june 10, 2021
 1. Added D functionality of CRUD
 2. Now the delete functionality of the web application also works.
 3. So total of all CRUD functionality's work.
+
+
+Changes in commit#8
+********************
+
+Time taken: 74 mins
+Modified on: june 10, 2021
+
+1. Changed the code for addTask and retrieveAllTasks in object oriented model
+2. Made the code more effective in C & R of CRUD
 
 
 

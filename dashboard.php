@@ -22,7 +22,7 @@
           require('initDatabase.php');
           ?>
           <br>
-          <form action="form_validate.php" method="POST" id="form_AddTask" style="margin-bottom:20px;">
+          <form action="form_validate2.php" method="POST" id="form_AddTask" style="margin-bottom:20px;">
             <div class="row">
               <div class="col">
                 <label for="addTaskForm">Add Task</label>
@@ -55,31 +55,18 @@
         <div class="row">
           <div class="col">
             <?php
+              require('DatabaseManager.php');
+              require('Task.php');
 
-              $servername = "localhost";
-              $username = "root";
-              $password = "root";
-              $database_name = "db_alpha-albatross";
 
-              $connection = new mysqli($servername, $username, $password, $database_name);
 
-              if($connection->connect_error)
+
+              $myTask = new Task();
+              $result = $myTask->retrieveAllTasks();
+
+              if($result->num_rows > 0) // if this is true, the result has 1 or more rows
               {
-              die("Connection Failed".$connection->connect_error);
-
-              }
-
-              $select_query_string = "SELECT * FROM tbl_task";
-              $query_result = $connection->query($select_query_string);
-
-              if($query_result->num_rows > 0)
-              {
-                echo "<div class=\"alert alert-info\">";
-                echo "<br> DebugText: SELECT FROM tbl_Task query executed successfully";
-                echo "</div>";
-
                 ?>
-
                 <table class="table">
                 <thead>
                 <tr>
@@ -87,13 +74,10 @@
                 <th>Update</th><th>Delete</th>
                 </tr>
                 </thead>
-                <tbody>
-                
+                <tbody>      
                 <?php
 
-
-
-                while($row = $query_result->fetch_assoc() )
+                 while($row = $result->fetch_assoc() )
                   {
                     
                   ?>
@@ -125,26 +109,15 @@
                     <?php
 
                   }
-
-                ?>
-                
-                
-                </tbody>
-                </table>
-                
-              <?php
-
               }
               else
               {
-              echo "<br> DebugText: Error in SELECTing from tbl_Task. Reason:". $connection->error; 
+                echo "<br> DebugText: Error in SELECTing from tbl_Task. Reason:". $connection->error; 
               }
             ?>
            </div> 
          </div>
-           
-            
-          </div>
+        </div>
         </div>
       </div>
 

@@ -19,7 +19,7 @@
 
           <p>
           <?php
-          require('initDatabase.php');
+          
           ?>
           <br>
           <form action="form_validate2.php" method="POST" id="form_AddTask" style="margin-bottom:20px;">

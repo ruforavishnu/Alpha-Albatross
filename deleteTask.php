@@ -22,28 +22,27 @@
           </h3>
           <p>
         <?php
+        if(!isset($_GET['btnID']))
+          die("GET Parameter btnID not recieved. Dieing.");
 
-        if(isset($_GET['btnID']))
-        echo "<br> DebugTask: get parameter btnID works. Its value is:". $_GET['btnID'];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $database_name = "db_alpha-albatross";
+        require_once('DatabaseManager.php');
 
-        $connection = new mysqli($servername, $username, $password, $database_name);
+        $databaseConnection = DatabaseManager::getDatabaseConnection();
 
-        if($connection->connect_error)
+        if(!$databaseConnection)
         {
-          die("Connection Failed".$connection->connect_error);
+          echo "<br> DebugText:Database connection failed";
         }
         else
         {
-          echo "<br> DebugText: Database connection succeeded";
-        }
+          echo "<br> DebugText: Database connection succeeded.";
+        } 
+        $connection = $databaseConnection;
 
         $idToBeDeleted = $_GET['btnID'];
         $correctlyTrimmedTaskIDString = substr($idToBeDeleted, 6);
+        
         $delete_query_string = "DELETE FROM tbl_Task WHERE ID=".$correctlyTrimmedTaskIDString;
 
         echo "<br><br> DebugText: value of delete query: ". $delete_query_string;
@@ -51,8 +50,8 @@
         if($connection->query($delete_query_string) === TRUE)
         {
           echo "<br> DebugText: Task deleted from database.";
-          echo "<br><br><marquee> DebugText: Redirecting to dashboard in 5 seconds...</marquee>";
-          header( "refresh:5;url=dashboard.php" );
+          echo "<br><br> DebugText: Redirecting to dashboard in 5 seconds...</marquee>";
+          header( "refresh:1;url=dashboard.php" );
 
         }
         else

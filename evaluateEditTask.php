@@ -1,60 +1,41 @@
 <?php
 
-if(isset($_POST['txt_EditTaskDescription']))
+if(isset($_POST['txt_EditTaskDescription']) && isset($_POST['select_TaskStatus']) )
 {
-	echo "<br> DebugText: POST parameter txt_EditTaskDescription works. Its value is:". $_POST['txt_EditTaskDescription'];
-	echo "<br> DebugText: POST parameter select_TaskStatus works. Its value is:". $_POST['select_TaskStatus'];
-	echo "<br> DebugText: POST parameter hiddeninput_buttonID works. Its value is:". $_POST['hiddeninput_buttonID'];
+	require_once('DatabaseManager.php');
 
-	$servername = "localhost";
-	$username = "root";
-	$password = "root";
-	$database_name = "db_alpha-albatross";
+	$databaseConnection = DatabaseManager::getDatabaseConnection();
 
-	$connection = new mysqli($servername, $username, $password, $database_name);
-
-	if($connection->connect_error)
+	if(!$databaseConnection)
 	{
-	die("Connection Failed".$connection->connect_error);
-
+	echo "<br> DebugText:Database connection failed";
 	}
 	else
 	{
-		echo "<br> DebugText: Database connection succeeded";
-	}
+		echo "<br> DebugText: Database connection succeeded.";
+	}	
+	
+	$connection = $databaseConnection;
 
 	$taskDescriptionString = $_POST['txt_EditTaskDescription'];
 	$taskStatusString = $_POST['select_TaskStatus'];
 	$taskIDString = $_POST['hiddeninput_buttonID'];
 	$correctlyTrimmedTaskIDString = substr($taskIDString, 6);
-	echo "<br>DebugText: value of correctlyTrimmedTaskIDString : ". $correctlyTrimmedTaskIDString;
-
+	
 
 	$update_query_string = "UPDATE tbl_task SET taskDescription = \"" .$taskDescriptionString. "\", "
 											."taskStatus=\"". $taskStatusString. "\""
 											." WHERE ID=". $correctlyTrimmedTaskIDString;
 
-	echo "<br><br> DebugText: value of update string: ". $update_query_string;
+	
 
 	if($connection->query($update_query_string) === TRUE)
 	{
-		echo "<br> DebugText: UPDATE tbl_Task query executed successfully";
-		echo "<br><br><marquee> DebugText: Redirecting to dashboard in 5 seconds...</marquee>";
-
-
-		header( "refresh:5;url=dashboard.php" );
+		header( "refresh:1;url=dashboard.php" );
 	}
 	else
 	{
 		echo "<br> DebugText: Error in UPDATING to tbl_Task. Reason:". $connection->error;	
 	}
-
-
-
-
-
 }
-	
-
-
 ?>

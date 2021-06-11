@@ -10,7 +10,7 @@
 	}
 	else
 	{
-		echo "Database connection succeeded.";
+		
 
 		if(isset($_POST['txt_TaskDescription']) && isset($_POST['select_TaskStatus']))
 		{
@@ -19,10 +19,10 @@
 			$myTask = new Task();
 			if($myTask->addTask($databaseConnection, $taskDescription, $taskStatus))
 			{
-				echo "<br>DebugTask: Add task succeeded.";
-				echo "<br><marquee> DebugText: Redirecting to dashboard in 5 seconds...</marquee>";
+				
+				echo "<br>DebugText: Redirecting to dashboard in 1 seconds...</marquee>";
 
-				header( "refresh:5;url=dashboard.php" );
+				header( "refresh:1;url=dashboard.php" );
 
 			}
 			else

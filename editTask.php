@@ -23,25 +23,10 @@
         	<p>
 				<?php
 
-				if(isset($_GET['btnID']))
-				echo "<br> DebugTask: get parameter btnID works. Its value is:". $_GET['btnID'];
+				
 
-				$servername = "localhost";
-				$username = "root";
-				$password = "root";
-				$database_name = "db_alpha-albatross";
-
-				$connection = new mysqli($servername, $username, $password, $database_name);
-
-				if($connection->connect_error)
-				{
-				die("Connection Failed".$connection->connect_error);
-				}
-				else
-				{
-				echo "<br> DebugText: Database connection succeeded";
-				}
-
+				if(!isset($_GET['btnID']))
+					die("GET Parameter btnID not recieved. Dieing.");
 
 
 				?>

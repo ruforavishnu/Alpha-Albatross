@@ -1,6 +1,9 @@
+Project: Web app with TODO app functionality using Core-PHP in Object Oriented model as Front End and MySQL as Backend.
+
+
 Commit file details
 
-Total time taken in this project = 60+83+70+33+72+22+74 = 414 mins or 6 hours 54 mins
+Total time taken in this project = 60+83+70+33+72+22+74+20 = 434 mins or 7 hours 14 mins
 
 Changes are written in chronological order. So the latest commit details are at the bottom of the file.
 
@@ -78,6 +81,20 @@ Modified on: june 10, 2021
 
 1. Changed the code for addTask and retrieveAllTasks in object oriented model
 2. Made the code more effective in C & R of CRUD
+
+
+
+Changes in commit#9
+********************
+
+Time taken: 20 mins
+Modified on: june 11, 2021
+
+1. Made the code for edit task and delete task more effective and cleaner
+2. now all for sections of C,R,U & D of CRUD works effectively
+3. Exported database from phpmyadmin into .sql file and kept it in new folder called database-files
+
+
 
 
 
